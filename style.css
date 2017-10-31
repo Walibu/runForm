@@ -1,0 +1,70 @@
+
+
+* {
+    font-family: Helvetica;
+}
+table {
+    border-collapse: collapse;
+}
+tr {
+    border: 5px white solid;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+    width: 3em;
+    text-align: right;
+}
+.name-input {
+    text-align: left;
+}
+.name-input input {
+    width: 9em;
+}
+.row-time input {
+    width: 1.5em;
+}
+.row-header, .row-time, .row-result {
+    padding: 1em;
+}
+.row-header {
+    background-color: lightgray;
+}
+.row-time {
+}
+.row-result {
+    background-color: lightgray;
+}
+.col-1, .col-2, .col-3, .col-4 {
+    padding: 0.3em;
+    white-space: nowrap;
+}
+.row-time .col-3 {
+    padding-left: 3em;
+}
+.col-3, .col-4 {
+    text-align: right;
+}
+.part-result {
+    width: 4em;
+    padding: 0.3em 0.5em;
+    text-align: right;
+    background-color: lightgrey;
+}
+#threshold {
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid green;
+    padding: 0.3em 0.5em;
+}
+.suggest span {
+    padding-left: 5px;
+    color: grey;
+}
+.footer {
+    padding: 1em 0;
+}

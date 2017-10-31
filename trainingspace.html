@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script type="text/javascript" src="code.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body onload="init()">
+
+<table>
+<tr class="row-header">
+    <td class="col-1">
+        Schwelle
+    </td>
+    <td class="col-3" colspan="2">
+        <input type="number" name="ts-min" onchange="calculate()" /> :
+        <input type="number" name="ts-sec" onchange="calculate()" />
+    </td>
+    <td class="col-4">
+        <button id="update-button" onclick="calculate()">update</button>
+    </td>
+</tr>
+<tr class="row-time">
+    <td class="col-1">Intervall:</td>
+    <td class="col-2">
+        <div id="_1000int" class="suggest">--</div>
+        <div id="_400int" class="suggest">--</div>
+        <div id="_200int" class="suggest">--</div>
+    </td>
+    <td class="col-3">
+        <div>1000m</div>
+        <div> 400m</div>
+        <div> 200m</div>
+    </td>
+    <td class="col-4">
+        <div>Pause kurz 50%</div>
+    </td>
+</tr>
+<tr class="row-time">
+    <td class="col-1">Wiederholung:</td>
+    <td class="col-2">
+        <div id="_1000rep" class="suggest">--</div>
+        <div id="_400rep" class="suggest">--</div>
+        <div id="_200rep" class="suggest">--</div>
+    </td>
+    <td class="col-3">
+        <div>1000m</div>
+        <div> 400m</div>
+        <div> 200m</div>
+    </td>
+    <td class="col-4">
+        <div>Pause lang 90%</div>
+    </td>
+</tr>
+</table>
+</body>
+</html>
