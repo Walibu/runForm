@@ -273,6 +273,7 @@ function getMinPerKm(pace) {
     }
 }
 function setIntervalePaceLink(pace) {
+    document.getElementById('navigation_1').setAttribute('style', 'display:block;');
     document.getElementById('linktrainpace').setAttribute('href', './trainingspace.html?threshold=' + pace);
 }
 
