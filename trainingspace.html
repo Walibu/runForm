@@ -12,11 +12,11 @@
 <table>
 <tr class="row-header">
     <td class="col-1">
-        Schwelle
+        Schwelle (min / km)
     </td>
     <td class="col-2" colspan="2">
-        <input type="number" name="ts-min" onchange="calculate()" /> :
-        <input type="number" name="ts-sec" onchange="calculate()" />
+        <input type="number" name="ts-min" placeholder="min" onchange="calculate()" /> :
+        <input type="number" name="ts-sec" placeholder="sec" onchange="calculate()" />
     </td>
     <td class="col-4">
         <button id="update-button" onclick="calculate()">update</button>
@@ -24,7 +24,7 @@
 </tr>
 <tr class="row-time">
     <td class="col-1">Intervall:
-        <div>(Pause kurz 50%)</div>
+        <div>(Pause kurz, 1-2')</div>
     </td>
     <td class="col-2">
         <div>1000m</div>
@@ -41,7 +41,7 @@
 </tr>
 <tr class="row-time">
     <td class="col-1">Wiederholung:
-        <div>(Pause lang 90%)</div>
+        <div>(Pause lang, 3-4')</div>
     </td>
     <td class="col-2">
         <div>1000m</div>
