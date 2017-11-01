@@ -293,8 +293,8 @@ function init() {
 function update() {
     document.getElementsByName('ts-min')[0].value = getMinPartPerKm(ts10s);
     document.getElementsByName('ts-sec')[0].value = getSecPartPerKm(ts10s);
-    let _1000int = ts10s * 1.05;
-    let _400int = ts10s * 1.08;
+    let _1000int = ts10s * 1.05;  // 5k PB
+    let _400int = ts10s * 1.08;   // 3k PB
     let _200int = ts10s * 1.12;
     let _1000rep = ts10s * 1.13;
     let _400rep = ts10s * 1.16;
@@ -317,6 +317,16 @@ function update() {
     document.getElementById("_200rep").innerHTML =
         getMinPartPerKm(_200rep / 0.2) + " : " + getSecPartPerKm(_200rep / 0.2) +
         "<span> (" + getMinPartPerKm(_200rep) + " : " + getSecPartPerKm(_200rep) + ")</span>";
+        
+    document.getElementById("_3kPB").innerHTML =
+        getMinPartPerKm(_400int / 3) + " : " + getSecPartPerKm(_400int / 3) +
+        "<span> (" + getMinPartPerKm(_400rep) + " : " + getSecPartPerKm(_400rep) + ")</span>";
+    document.getElementById("_5kPB").innerHTML =
+        getMinPartPerKm(_1000int / 5) + " : " + getSecPartPerKm(_1000int / 5) +
+        "<span> (" + getMinPartPerKm(_1000int) + " : " + getSecPartPerKm(_1000int) + ")</span>";
+    document.getElementById("_10kPB").innerHTML =
+        getMinPartPerKm(ts10s / 10) + " : " + getSecPartPerKm(ts10s / 10) +
+        "<span> (" + getMinPartPerKm(ts10s) + " : " + getSecPartPerKm(ts10s) + ")</span>";
 }
 
 function calculate() {
