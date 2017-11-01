@@ -161,7 +161,7 @@ function deleteUserData() {
 
 function setColor(name, value, lowerLimit, upperLimit) {
     if (value > lowerLimit && value < upperLimit) {
-        document.getElementById(name).style.backgroundColor = "lightgreen";
+        document.getElementById(name).style.backgroundColor = "#6dd463";
     } else {
         document.getElementById(name).style.backgroundColor = "lightgrey";
     }
@@ -199,7 +199,13 @@ function changeName() {
     setDeleteButtonName(name);
 }
 function setDeleteButtonName(name) {
-    document.getElementById('deletebutton').innerHTML = "'" + name + "' löschen";
+    let button = document.getElementById('deletebutton');
+    if (name !== "") {
+        button.innerHTML = "'" + name + "' löschen";
+        button.setAttribute("style", "display:inline;");
+    } else {
+        button.setAttribute("style", "display:none;");
+    }
 }
 
 function calc() {
