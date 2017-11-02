@@ -15,7 +15,7 @@
     <td class="col-1">Distanz<br />
         <input type="number" name="distance" min="500" max="2000" onchange="calc()" /> m
     </td>
-    <td class="col-3" colspan="2">
+    <td class="col-3" colspan="3">
         <div class="name-input">
             Läufer<br />
             <input type="text" name="identity" placeholder="Name" />
@@ -35,7 +35,8 @@
         <input type="number" name="veryeasy-min" min="2" max="10" placeholder="min" onchange="calc()" /> :
         <input type="number" name="veryeasy-sec" min="0" max="60" placeholder="sec" onchange="calc()" />
     </td>
-    <td class="col-3"><div class="part-result" id="veryeasy-per">-</td>
+    <td class="col-5"><div id="veryeasy-pace">-</div></td>
+    <td class="col-3"><div class="part-result" id="veryeasy-per">-</div></td>
     <td class="col-4"> (< 70%)</td>
 </tr><tr class="row-time">
     <td class="col-1">locker</td>
@@ -43,7 +44,8 @@
         <input type="number" name="easy-min" min="2" max="10" placeholder="min" onchange="calc()" /> :
         <input type="number" name="easy-sec" min="0" max="60" placeholder="sec" onchange="calc()" />
     </td>
-    <td class="col-3"><div class="part-result" id="easy-per">-</td>
+    <td class="col-5"><div id="easy-pace">-</div></td>
+    <td class="col-3"><div class="part-result" id="easy-per">-</div></td>
     <td class="col-4"> (70% - 83%)</td>
 </tr><tr class="row-time">
     <td class="col-1">zügig</td>
@@ -51,7 +53,8 @@
         <input type="number" name="moderate-min" min="2" max="10" placeholder="min" onchange="calc()" /> :
         <input type="number" name="moderate-sec" min="0" max="60" placeholder="sec" onchange="calc()" />
     </td>
-    <td class="col-3"><div class="part-result" id="moderate-per">-</td>
+    <td class="col-5"><div id="moderate-pace">-</div></td>
+    <td class="col-3"><div class="part-result" id="moderate-per">-</div></td>
     <td class="col-4"> (83% - 93%)</td>
 </tr><tr class="row-time">
     <td class="col-1">schnell</td>
@@ -59,7 +62,8 @@
         <input type="number" name="fast-min" min="2" max="10" placeholder="min" onchange="calc()" /> :
         <input type="number" name="fast-sec" min="0" max="60" placeholder="sec" onchange="calc()" />
     </td>
-    <td class="col-3"><div class="part-result" id="fast-per">-</td>
+    <td class="col-5"><div id="fast-pace">-</div></td>
+    <td class="col-3"><div class="part-result" id="fast-per">-</div></td>
     <td class="col-4"> (93% - 103%)</td>
 </tr><tr class="row-time">
     <td class="col-1">maximal</td>
@@ -67,18 +71,19 @@
         <input type="number" name="maxspeed-min" min="2" max="10" placeholder="min" onchange="calc()" /> :
         <input type="number" name="maxspeed-sec" min="0" max="60" placeholder="sec" onchange="calc()" />
     </td>
+    <td class="col-5"><div id="maxspeed-pace">-</div></td>
     <td class="col-3"><div class="part-result" id="maxspeed-per">-</div></td>
     <td class="col-4"> (> 103%)</td>
 </tr>
 <tr class="row-result">
     <td class="col-1">Schwelle (min/km)</td>
     <td class="col-2"><div id="threshold">--</div></td>
-    <td class="col-3"><button id="savebutton" onclick="saveUserData()">Daten speichern</button></td>
+    <td class="col-3" colspan="2"><button id="savebutton" onclick="saveUserData()">Daten speichern</button></td>
     <td class="col-4"><button id="deletebutton" onclick="deleteUserData()">löschen</button></td>
 </tr>
 <tr><td></td></tr>
 <tr>
-    <td colspan="4">
+    <td colspan="5">
         <!--<a href="./index.html" download="lauftest.html">Download</a><br />-->
         <div id="navigation_1" class="back-forward-link">
             <a id="linktrainpace" href="./trainingspace.html"> &rarr; Empfohlene Intervall Pace</a>

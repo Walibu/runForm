@@ -95,6 +95,12 @@ function initUserData() {
             document.getElementsByName("fast-sec")[0].value = userData[7];
             document.getElementsByName("maxspeed-min")[0].value = userData[8];
             document.getElementsByName("maxspeed-sec")[0].value = userData[9];
+            if (userData[10] > 0) {
+                distance = userData[10];
+            } else {
+                distance = 1000;
+            }
+            document.getElementsByName('distance')[0].value = userData[10];
             calc();
         }
     }
@@ -125,7 +131,8 @@ function saveUserData() {
             document.getElementsByName("fast-min")[0].value,
             document.getElementsByName("fast-sec")[0].value,
             document.getElementsByName("maxspeed-min")[0].value,
-            document.getElementsByName("maxspeed-sec")[0].value
+            document.getElementsByName("maxspeed-sec")[0].value,
+            document.getElementsByName('distance')[0].value
             ]
         );
         resetInputData();
@@ -260,6 +267,20 @@ function calc() {
     document.getElementById('moderate-per').innerHTML = getPercent(moderate, matchThreshold) + "%";
     document.getElementById('fast-per').innerHTML = getPercent(fast, matchThreshold) + "%";
     document.getElementById('maxspeed-per').innerHTML = getPercent(maxspeed, matchThreshold) + "%";
+    
+    if (distance == 1000) {
+        document.getElementById('veryeasy-pace').innerHTML = "";
+        document.getElementById('easy-pace').innerHTML = "";
+        document.getElementById('moderate-pace').innerHTML = "";
+        document.getElementById('fast-pace').innerHTML = "";
+        document.getElementById('maxspeed-pace').innerHTML = "";
+    } else {
+        document.getElementById('veryeasy-pace').innerHTML = getMinPerKm(veryeasy);
+        document.getElementById('easy-pace').innerHTML = getMinPerKm(easy);
+        document.getElementById('moderate-pace').innerHTML = getMinPerKm(moderate);
+        document.getElementById('fast-pace').innerHTML = getMinPerKm(fast);
+        document.getElementById('maxspeed-pace').innerHTML = getMinPerKm(maxspeed);
+    }
     
     setColor("veryeasy-per", getPercent(veryeasy, matchThreshold), limit0, limit1);
     setColor("easy-per", getPercent(easy, matchThreshold), limit1, limit2);
