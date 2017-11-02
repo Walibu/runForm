@@ -36,6 +36,7 @@ function initValues() {
             myUsers = [""];
             localStorage.setItem("allUsers", myUsers);
             updateUserList(myUsers);
+            setDeleteButtonName("");
         }
     } else {
         document.getElementById('userchoice').disabled = "disabled";
@@ -52,10 +53,12 @@ function updateUserList(users) {
     for (let i = 0; i < users.length; i++) {
         userList.innerHTML += '<option value="' + users[i] + '">' + users[i] + '</option>\n';
     }
-    if (users.length > 0) {
+    if (users.length > 1) {
         userList.disabled = "";
+        document.getElementById('userList').setAttribute("style", "display:inline;");
     } else {
         userList.disabled = "disabled";
+        document.getElementById('userList').setAttribute("style", "display:none;");
     }
 }
 function supports_html5_storage() {
@@ -264,25 +267,17 @@ function calc() {
     setColor("fast-per", getPercent(fast, matchThreshold), limit3, limit4);
     setColor("maxspeed-per", getPercent(maxspeed, matchThreshold), limit4, limitX);
     
-    if (matchCount < 3) {
+    if (matchCount < 3 || matchThreshold < minThreshold || matchThreshold > maxThreshold) {
         matchThreshold = 0;
     }
     document.getElementById('threshold').innerHTML = getMinPerKm(matchThreshold);
     setColor("threshold", matchThreshold, minThreshold, maxThreshold);
-    setIntervalePaceLink(matchThreshold);
-}
-function getMinPerKm(pace) {
-    if (pace > 0) {
-        return Math.floor(10000 / pace / 60) + " : " + Math.round(10000 / pace % 60);
-    } else {
-        return "-";
-    }
-}
-function setIntervalePaceLink(pace) {
-    document.getElementById('navigation_1').setAttribute('style', 'display:block;');
-    document.getElementById('linktrainpace').setAttribute('href', './trainingspace.html?threshold=' + pace);
+    setIntervallPaceLink(matchThreshold);
 }
 
+function setIntervallPaceLink(pace) {
+    document.getElementById('linktrainpace').setAttribute('href', './trainingspace.html?threshold=' + pace);
+}
 
 function getURLParameter(name) {
     return decodeURIComponent(
@@ -349,6 +344,10 @@ function getPace(name) {
     } else {
         return 0;
     }
+}
+
+function getMinPerKm(pace) {
+    return getMinPartPerKm(pace) + " : " + getSecPartPerKm(pace);
 }
 
 function getSecPartPerKm(pace) {

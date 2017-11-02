@@ -22,9 +22,11 @@
         </div>
     </td>
     <td class="col-4">
-        Gespeicherte Daten<br />
-        <select id="userchoice" name="identityList" onchange="changeName()" onclick="changeName()">
-        </select>
+        <span id="userList">
+            Gespeicherte Daten<br />
+            <select id="userchoice" name="identityList" onchange="changeName()" onclick="changeName()">
+            </select>
+        </span>
     </td>
 </tr>
 <tr class="row-time">
@@ -78,11 +80,11 @@
 <tr>
     <td colspan="4">
         <!--<a href="./index.html" download="lauftest.html">Download</a><br />-->
-        <!--Das Formular ist auch offline nutzbar.-->
-        <div id="navigation_1">
+        <div id="navigation_1" class="back-forward-link">
             <a id="linktrainpace" href="./trainingspace.html"> &rarr; Empfohlene Intervall Pace</a>
         </div>
     </td>
+</tr>
 </table>
 </body>
 </html>                                                     
