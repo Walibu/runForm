@@ -275,11 +275,11 @@ function calc() {
         document.getElementById('fast-pace').innerHTML = "";
         document.getElementById('maxspeed-pace').innerHTML = "";
     } else {
-        document.getElementById('veryeasy-pace').innerHTML = getMinPerKm(veryeasy);
-        document.getElementById('easy-pace').innerHTML = getMinPerKm(easy);
-        document.getElementById('moderate-pace').innerHTML = getMinPerKm(moderate);
-        document.getElementById('fast-pace').innerHTML = getMinPerKm(fast);
-        document.getElementById('maxspeed-pace').innerHTML = getMinPerKm(maxspeed);
+        document.getElementById('veryeasy-pace').innerHTML = getMinPerKm(veryeasy) + "&nbsp;/km";
+        document.getElementById('easy-pace').innerHTML = getMinPerKm(easy) + "&nbsp;/km";
+        document.getElementById('moderate-pace').innerHTML = getMinPerKm(moderate) + "&nbsp;/km";
+        document.getElementById('fast-pace').innerHTML = getMinPerKm(fast) + "&nbsp;/km";
+        document.getElementById('maxspeed-pace').innerHTML = getMinPerKm(maxspeed) + "&nbsp;/km";
     }
     
     setColor("veryeasy-per", getPercent(veryeasy, matchThreshold), limit0, limit1);
