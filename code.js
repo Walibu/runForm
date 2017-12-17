@@ -3,12 +3,12 @@
 let distance = 1000;
 let ts10s = 0;
 
-const limit0 = 0;
-const limit1 = 70;
+const limit0 = 65;
+const limit1 = 73;
 const limit2 = 83;
 const limit3 = 93;
 const limit4 = 103;
-const limitX = 999;
+const limitX = 110;
 const minThreshold = 10; // 10 Meter pro 10s
 const maxThreshold = 100; // 100 Meter pro 10s
 
@@ -235,11 +235,11 @@ function calc() {
     // threshold Wert ist in Meter pro 10 Sekunden, analog der Funktion getPace()
     for (let threshold = minThreshold; threshold < maxThreshold; threshold++) {
         count = 0;
-        if (veryeasy < threshold * limit1 / 100) count++;
+        if (veryeasy > threshold * limit0 / 100 && veryeasy < threshold * limit1 / 100) count++;
         if (easy > threshold * limit1 / 100 && easy < threshold * limit2 / 100) count++;
         if (moderate > threshold * limit2 / 100 && moderate < threshold * limit3 / 100) count++;
         if (fast > threshold * limit3 / 100 && fast < threshold * limit4 / 100) count++;
-        if (maxspeed > threshold * limit4 / 100) count++;
+        if (maxspeed > threshold * limit4 / 100 && maxspeed < threshold * limitX / 100) count++;
         if (count > matchCount) {
             matchCount = count;
             matchThresholdUp = threshold;
@@ -249,18 +249,18 @@ function calc() {
     // Gleiche Annäherung wie oben, aber von maxThreshold her Richtung kleinere Werte
     for (let threshold = maxThreshold; threshold > minThreshold; threshold--) {
         count = 0;
-        if (veryeasy < threshold * limit1 / 100) count++;
+        if (veryeasy > threshold * limit0 / 100 && veryeasy < threshold * limit1 / 100) count++;
         if (easy > threshold * limit1 / 100 && easy < threshold * limit2 / 100) count++;
         if (moderate > threshold * limit2 / 100 && moderate < threshold * limit3 / 100) count++;
         if (fast > threshold * limit3 / 100 && fast < threshold * limit4 / 100) count++;
-        if (maxspeed > threshold * limit4 / 100) count++;
+        if (maxspeed > threshold * limit4 / 100 && maxspeed < threshold * limitX / 100) count++;
         if (count > matchCount) {
             matchCount = count;
             matchThresholdDown = threshold;
         }
     }
     // Mittelwert von beiden besten gefundenen Werten
-    let matchThreshold = (matchThresholdUp + matchThresholdDown) / 2;
+    let matchThreshold = matchThresholdUp;//(matchThresholdUp + matchThresholdDown) / 2;
 
     document.getElementById('veryeasy-per').innerHTML = getPercent(veryeasy, matchThreshold) + "%";
     document.getElementById('easy-per').innerHTML = getPercent(easy, matchThreshold) + "%";
