@@ -32,6 +32,7 @@ function updateSpeed() {
     } else {
         speedFluss_s100m = 360 / speed;
     }
+    speedFluss_m_s = Math.round(speedFluss_s100m / 3.6) / 10;
 }
 
 function updateAthlet() {
@@ -60,11 +61,10 @@ function update() {
     updateDistance();
     updateSpeed();
     updateAthlet();
+    calculate();
 }
 
 function calculate() {
-    update();
-
     let time1 = document.getElementsByName('ts1')[0].value;
     let time2 = document.getElementsByName('ts2')[0].value;
     let stime1 = distanceSee_m * time1 / 100;
@@ -91,6 +91,7 @@ function calculate() {
 
     document.getElementById("_distanceFluss").innerHTML = "<span>" + (distanceFluss) + " m</span>";
     document.getElementById("_distanceSee").innerHTML = "<span>" + (distanceSee_m) + " m</span>";
+    document.getElementById("fspeed_ms").innerHTML = (speedFluss_m_s) + " m/s";
 
     document.getElementById("_ftime_s1").innerHTML = "<span>" + getMinSec(ftime1) + "</span>";
     document.getElementById("_ftime_s2").innerHTML = "<span>" + getMinSec(ftime2) + "</span>";

@@ -12,66 +12,72 @@
 <table>
     <tr class="row-header">
         <td class="col-1" colspan="3">
-            gewünschte Distanz See (m)
+            gewünschte Distanz See
         </td>
         <td class="col-3">
-            <input type="number" name="tdistance" placeholder="m" onchange="calculate()" />
+            <input type="number" name="tdistance" placeholder="m" onchange="update()" onclick="this.select();" />
         </td>
+        <td class="col-5">m</td>
     </tr>
 <tr class="row-header">
     <td class="col-1" colspan="3">
-        Fluss Strömung (km/h)
+        Fluss Strömung
     </td>
     <td class="col-3">
-        <input type="number" name="tspeed" placeholder="sec" onchange="calculate()" />
+        <span id="fspeed_ms"></span>
+        <input type="number" name="tspeed" placeholder="sec" onchange="update()" onclick="this.select();" />
     </td>
+    <td class="col-5">km/h</td>
 </tr>
 <tr class="row-header">
     <td class="col-1" colspan="3">
-        Swim pace Athlet 1 (sec/100m)
+        Swim pace Athlet 1
     </td>
     <td class="col-3">
-        <input type="number" name="ts1" placeholder="sec" onchange="calculate()" />
+        <input type="number" name="ts1" placeholder="sec" onchange="update()" onclick="this.select();" />
     </td>
+    <td class="col-5">s/100m</td>
 </tr>
 <tr class="row-header">
     <td class="col-1" colspan="3">
-        Swim pace Athlet 2 (sec/100m)
+        Swim pace Athlet 2
     </td>
     <td class="col-3">
-        <input type="number" name="ts2" placeholder="sec" onchange="calculate()" />
+        <input type="number" name="ts2" placeholder="sec" onchange="update()" onclick="this.select();" />
     </td>
+    <td class="col-5">s/100m</td>
 </tr>
 <tr class="row-time">
     <td class="col-1">
-        <div>Distanz Fluss</div>
+        <div>See</div>
         <div>Zeit Athlet 1</div>
         <div>Zeit Athlet 2</div>
         <div>Differenz 1:2</div>
     </td>
     <td class="col-2">
-        <div id="_distanceFluss" class="suggest">--</div>
-        <div id="_ftime_s1" class="suggest">--</div>
-        <div id="_ftime_s2" class="suggest">--</div>
-        <div id="_fdelta_s" class="suggest">--</div>
-    </td>
-    <td class="col-3">
-        <div>See</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-    </td>
-    <td class="col-4">
         <div id="_distanceSee" class="suggest">--</div>
         <div id="_stime_s1" class="suggest">--</div>
         <div id="_stime_s2" class="suggest">--</div>
         <div id="_sdelta_s" class="suggest">--</div>
     </td>
+    <td class="col-3" colspan="2">
+        <div>Distanz Fluss</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+    </td>
+    <td class="col-4">
+        <div id="_distanceFluss" class="suggest">--</div>
+        <div id="_ftime_s1" class="suggest">--</div>
+        <div id="_ftime_s2" class="suggest">--</div>
+        <div id="_fdelta_s" class="suggest">--</div>
+    </td>
+    <td></td>
 </tr>
 <tr class="row-header">
-    <td class="col-2" colspan="3"></td>
+    <td class="col-2" colspan="4"></td>
     <td class="col-3">
-        <button id="update-button" onclick="calculate()">update</button>
+        <button id="update-button" onclick="update()">update</button>
     </td>
 </tr>
 <!--

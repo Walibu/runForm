@@ -39,13 +39,17 @@ input::-moz-placeholder {
     color: #89bc07;
 }
 
+#fspeed_ms {
+    color: #333;
+}
+
 #update-button {
     height: 2em;
     background-color: #89bc07;
     color: white;
-    border-color:  #89bc07;
     border-style: none;
     border-radius: 5px;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.5);
 }
 #update-button:hover {
     background-color: #00770d;
@@ -69,6 +73,12 @@ input::-moz-placeholder {
 }
 .col-1 {
     padding-left: 10px;
+}
+.col-4 {
+    padding-right: 0;
+}
+.col-5 {
+    padding: 0;
 }
 .col-2, .col-3, .col-4 {
     text-align: right;
