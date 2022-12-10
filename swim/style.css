@@ -41,6 +41,9 @@ input::-moz-placeholder {
 
 #fspeed_ms {
     color: #333;
+    float: left;
+    padding: 5px;
+    min-width: 60px;
 }
 
 #update-button {
@@ -66,7 +69,7 @@ input::-moz-placeholder {
     color: white;
 }
 
-.col-1, .col-2, .col-3, .col-4 {
+.col-1, .col-2, .col-3, .col-4, .col-5 {
     padding: 5px;
     white-space: nowrap;
     min-width: 60px;
@@ -74,14 +77,19 @@ input::-moz-placeholder {
 .col-1 {
     padding-left: 10px;
 }
-.col-4 {
-    padding-right: 0;
-}
 .col-5 {
     padding: 0;
 }
 .col-2, .col-3, .col-4 {
     text-align: right;
+}
+.col-2 .suggest {
+    padding-left: 5px;
+    color: grey;
+}
+.col-4 .suggest {
+    font-weight: bold;
+    color: #89bc07;
 }
 
 #linktrainpace, #linkback {
@@ -97,8 +105,4 @@ input::-moz-placeholder {
 }
 .back-forward-link {
     text-align: right;
-}
-.suggest span {
-    padding-left: 5px;
-    color: grey;
 }

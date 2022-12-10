@@ -32,7 +32,7 @@ function updateSpeed() {
     } else {
         speedFluss_s100m = 360 / speed;
     }
-    speedFluss_m_s = Math.round(speedFluss_s100m / 3.6) / 10;
+    speedFluss_m_s = Math.round(1000 / speedFluss_s100m) / 10;
 }
 
 function updateAthlet() {
@@ -89,16 +89,16 @@ function calculate() {
         sdelta = stime1 - stime2;
     }
 
-    document.getElementById("_distanceFluss").innerHTML = "<span>" + (distanceFluss) + " m</span>";
-    document.getElementById("_distanceSee").innerHTML = "<span>" + (distanceSee_m) + " m</span>";
+    document.getElementById("_distanceFluss").innerHTML = (distanceFluss) + " m";
+    document.getElementById("_distanceSee").innerHTML = (distanceSee_m) + " m";
     document.getElementById("fspeed_ms").innerHTML = (speedFluss_m_s) + " m/s";
 
-    document.getElementById("_ftime_s1").innerHTML = "<span>" + getMinSec(ftime1) + "</span>";
-    document.getElementById("_ftime_s2").innerHTML = "<span>" + getMinSec(ftime2) + "</span>";
-    document.getElementById("_fdelta_s").innerHTML = "<span>" + getMinSec(fdelta) + "</span>";
-    document.getElementById("_stime_s1").innerHTML = "<span>" + getMinSec(stime1) + "</span>";
-    document.getElementById("_stime_s2").innerHTML = "<span>" + getMinSec(stime2) + "</span>";
-    document.getElementById("_sdelta_s").innerHTML = "<span>" + getMinSec(sdelta) + "</span>";
+    document.getElementById("_ftime_s1").innerHTML = getMinSec(ftime1);
+    document.getElementById("_ftime_s2").innerHTML = getMinSec(ftime2);
+    document.getElementById("_fdelta_s").innerHTML = getMinSec(fdelta);
+    document.getElementById("_stime_s1").innerHTML = getMinSec(stime1);
+    document.getElementById("_stime_s2").innerHTML = getMinSec(stime2);
+    document.getElementById("_sdelta_s").innerHTML = getMinSec(sdelta);
 }
 
 function getMinSec(time) {
