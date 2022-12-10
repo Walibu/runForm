@@ -17,7 +17,8 @@ td {
 input {
     border-radius: 0;
     padding: 5px;
-    border: 1px solid grey
+    border: none;
+    border-radius: 5px;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -39,9 +40,12 @@ input::-moz-placeholder {
 }
 
 #update-button {
+    height: 2em;
     background-color: #89bc07;
     color: white;
     border-color:  #89bc07;
+    border-style: none;
+    border-radius: 5px;
 }
 #update-button:hover {
     background-color: #00770d;
