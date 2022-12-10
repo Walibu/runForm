@@ -31,11 +31,20 @@ input[type="number"] {
 }
 input::-webkit-input-placeholder {
     opacity: 0.5;
-    color: #7ba1c2;
+    color: #89bc07;
 }
 input::-moz-placeholder {
     opacity: 0.5;
-    color: #7ba1c2;
+    color: #89bc07;
+}
+
+#update-button {
+    background-color: #89bc07;
+    color: white;
+    border-color:  #89bc07;
+}
+#update-button:hover {
+    background-color: #00770d;
 }
 
 .row-time input {
@@ -45,7 +54,7 @@ input::-moz-placeholder {
     padding: 1em;
 }
 .row-header {
-    background-color: #2d5b85;
+    background-color: #039EEA;
     color: white;
 }
 
@@ -62,14 +71,14 @@ input::-moz-placeholder {
 }
 
 #linktrainpace, #linkback {
-    background-color: #7ba1c2;
+    background-color: #89bc07;
     text-decoration: none;
     padding: 5px;
     margin: 25px -5px 0 0;
     color: white;
 }
 #linktrainpace:hover, #linkback:hover {
-    background-color: #2d5b85;
+    background-color: #00770d;
     color: white;
 }
 .back-forward-link {
