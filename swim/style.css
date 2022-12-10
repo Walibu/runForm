@@ -1,0 +1,99 @@
+
+
+* {
+    font-family: Helvetica;
+}
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+tr {
+    border: 5px white solid;
+}
+td {
+    padding: 5px;
+}
+input {
+    border-radius: 0;
+    padding: 5px;
+    border: 1px solid grey
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+    width: 3em;
+    text-align: right;
+}
+input::-webkit-input-placeholder {
+    opacity: 0.5;
+    color: #7ba1c2;
+}
+input::-moz-placeholder {
+    opacity: 0.5;
+    color: #7ba1c2;
+}
+.name-input {
+    text-align: left;
+}
+.name-input input {
+    width: 9em;
+}
+.row-time input {
+    width: 1.6em;
+}
+.row-header, .row-time, .row-result {
+    padding: 1em;
+}
+.row-header {
+    background-color: #2d5b85;
+    color: white;
+}
+.row-time {
+}
+.row-result {
+    background-color: #2d5b85;
+    color: white;
+}
+.col-1, .col-2, .col-3, .col-4, .col-5 {
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+.row-time .col-5 {
+    padding-left: 2em;
+}
+.col-2, .col-3, .col-4, .col-5 {
+    text-align: right;
+}
+.part-result {
+    width: 4em;
+    padding: 0.3em 0.5em;
+    text-align: right;
+    background-color: #7ba1c2;
+}
+#threshold {
+    font-weight: bold;
+    text-align: center;
+    padding: 0.3em 0.5em;
+}
+#linktrainpace, #linkback {
+    background-color: #7ba1c2;
+    text-decoration: none;
+    padding: 5px;
+    margin: 25px -5px 0 0;
+    color: white;
+}
+#linktrainpace:hover, #linkback:hover {
+    background-color: #2d5b85;
+    color: white;
+}
+.back-forward-link {
+    text-align: right;
+}
+.suggest span {
+    padding-left: 5px;
+    color: grey;
+}
