@@ -1,4 +1,5 @@
-
+/* Walibu
+   MIT licence */
 
 * {
     font-family: Helvetica;
@@ -20,11 +21,11 @@ input {
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
     margin: 0;
 }
 input[type="number"] {
-    -moz-appearance: textfield;
+    appearance: textfield;
     width: 3em;
     text-align: right;
 }
@@ -36,49 +37,26 @@ input::-moz-placeholder {
     opacity: 0.5;
     color: #7ba1c2;
 }
-.name-input {
-    text-align: left;
-}
-.name-input input {
-    width: 9em;
-}
+
 .row-time input {
     width: 1.6em;
 }
-.row-header, .row-time, .row-result {
+.row-header, .row-time {
     padding: 1em;
 }
 .row-header {
     background-color: #2d5b85;
     color: white;
 }
-.row-time {
-}
-.row-result {
-    background-color: #2d5b85;
-    color: white;
-}
-.col-1, .col-2, .col-3, .col-4, .col-5 {
+
+.col-1, .col-2, .col-3, .col-4 {
     padding: 5px 10px;
     white-space: nowrap;
 }
-.row-time .col-5 {
-    padding-left: 2em;
-}
-.col-2, .col-3, .col-4, .col-5 {
+.col-2, .col-3, .col-4 {
     text-align: right;
 }
-.part-result {
-    width: 4em;
-    padding: 0.3em 0.5em;
-    text-align: right;
-    background-color: #7ba1c2;
-}
-#threshold {
-    font-weight: bold;
-    text-align: center;
-    padding: 0.3em 0.5em;
-}
+
 #linktrainpace, #linkback {
     background-color: #7ba1c2;
     text-decoration: none;
