@@ -41,9 +41,6 @@ input::-moz-placeholder {
 
 #fspeed_ms {
     color: #333;
-    float: left;
-    padding: 5px;
-    min-width: 60px;
 }
 
 #update-button {
@@ -86,6 +83,9 @@ input::-moz-placeholder {
 .col-2 .suggest {
     padding-left: 5px;
     color: grey;
+}
+.col-3 .suggest {
+    color: #89bc07;
 }
 .col-4 .suggest {
     font-weight: bold;
