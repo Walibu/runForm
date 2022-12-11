@@ -85,6 +85,7 @@ input::-moz-placeholder {
     color: grey;
 }
 .col-3 .suggest {
+    font-weight: bold;
     color: #89bc07;
 }
 .col-4 .suggest {
