@@ -77,6 +77,8 @@ function calculate() {
     let distanceFluss = Math.round(distanceSee_m *
         (1 / vTime2 - 1 / vTime1) / (1 / (vTime2 + vFluss) - 1 / (vTime1 + vFluss)));
 
+    let distanceFlussT = Math.round(distanceSee_m * (vTime1 + vFluss) / vTime1);
+
     let ftime1 = Math.round(distanceFluss / (vTime1 + vFluss));
     let ftime2 = Math.round(distanceFluss / (vTime2 + vFluss));
     if (ftime2 > ftime1) {}
@@ -89,16 +91,27 @@ function calculate() {
         sdelta = stime1 - stime2;
     }
 
-    document.getElementById("_distanceFluss").innerHTML = (distanceFluss) + " m";
+    let ftime1T = Math.round(distanceFlussT / (vTime1 + vFluss)); // == stime1
+    let ftime2T = Math.round(distanceFlussT / (vTime2 + vFluss));
+    let fdeltaT = ftime2T - ftime1T;
+    if (ftime1T > ftime2T) {
+        fdeltaT = ftime1T - ftime2T;
+    }
+
     document.getElementById("_distanceSee").innerHTML = (distanceSee_m) + " m";
     document.getElementById("fspeed_ms").innerHTML = (speedFluss_m_s) + " m/s";
+    document.getElementById("_distanceFluss").innerHTML = (distanceFluss) + " m";
+    document.getElementById("_distanceFlussT").innerHTML = (distanceFlussT) + " m";
 
-    document.getElementById("_ftime_s1").innerHTML = getMinSec(ftime1);
-    document.getElementById("_ftime_s2").innerHTML = getMinSec(ftime2);
-    document.getElementById("_fdelta_s").innerHTML = getMinSec(fdelta);
     document.getElementById("_stime_s1").innerHTML = getMinSec(stime1);
     document.getElementById("_stime_s2").innerHTML = getMinSec(stime2);
     document.getElementById("_sdelta_s").innerHTML = getMinSec(sdelta);
+    document.getElementById("_ftime_s1").innerHTML = getMinSec(ftime1);
+    document.getElementById("_ftime_s2").innerHTML = getMinSec(ftime2);
+    document.getElementById("_fdelta_s").innerHTML = getMinSec(fdelta);
+    document.getElementById("_ftime_s1T").innerHTML = getMinSec(ftime1T);
+    document.getElementById("_ftime_s2T").innerHTML = getMinSec(ftime2T);
+    document.getElementById("_fdelta_sT").innerHTML = getMinSec(fdeltaT);
 }
 
 function getMinSec(time) {
