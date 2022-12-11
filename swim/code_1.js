@@ -1,9 +1,9 @@
 /* Walibu
    MIT licence */
    
-let distanceSee_m = 300;
-let speedFluss_s100m = 60;
-let speedFluss_m_s = 1.67;
+let distanceSee_m = 400;
+let speedFluss_s100m = 65;
+let speedFluss_m_s = 1.5;
 let athlet_s1 = 67;
 let athlet_s2 = 95;
 
@@ -28,7 +28,7 @@ function updateDistance() {
 function updateSpeed() {
     let speed = document.getElementsByName('tspeed')[0].value;
     if (!speed || !(speed >= 0)) {
-        document.getElementsByName('tspeed')[0].value = 360 / speedFluss_s100m;
+        document.getElementsByName('tspeed')[0].value = Math.round(3600 / speedFluss_s100m) / 10;
     } else {
         speedFluss_s100m = 360 / speed;
     }
