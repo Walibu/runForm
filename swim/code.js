@@ -27,7 +27,7 @@ function updateDistance() {
 
 function updateSpeed() {
     let speed = document.getElementsByName('tspeed')[0].value;
-    if (!speed || !(speed > 0)) {
+    if (!speed || !(speed >= 0)) {
         document.getElementsByName('tspeed')[0].value = 360 / speedFluss_s100m;
     } else {
         speedFluss_s100m = 360 / speed;
