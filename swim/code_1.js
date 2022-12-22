@@ -2,8 +2,8 @@
    MIT licence */
    
 let distanceSee_m = 400;
-let speedFluss_s100m = 65;
-let speedFluss_m_s = 1.5;
+let speedFluss_s100m = 65.4545; // corresponds 5.5km/h
+let speedFluss_m_s = 1.5278;    // corresponds 5.5km/h
 let athlet_s1 = 67;
 let athlet_s2 = 95;
 

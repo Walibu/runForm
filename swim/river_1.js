@@ -2,23 +2,23 @@
    MIT licence
  */
    
-let distanceFluss_m = 1700;
-let speedFluss_s100m = 65;
-let speedFluss_m_s = 1.5;
-let athlet_s1 = 67;
-let athlet_s2 = 95;
+let distanceFluss_m = 1700.0;
+let speedFluss_s100m = 65.4545; // corresponds 5.5km/h
+let speedFluss_m_s = 1.5278;    // corresponds 5.5km/h
+let athlet_s1 = 67.0;
+let athlet_s2 = 95.0;
 
 
 function init() {
     let distance = getURLParameter("distance");
     if (distance) {
-        distanceFluss_m = distance;
+        distanceFluss_m = parseInt(distance);
     }
     update();
 }
 
 function updateDistance() {
-    let distance = document.getElementsByName('tdistance')[0].value;
+    let distance = parseInt(document.getElementsByName('tdistance')[0].value);
     if (!distance || !(distance > 0)) {
         document.getElementsByName('tdistance')[0].value = distanceFluss_m;
     } else {
@@ -27,7 +27,7 @@ function updateDistance() {
 }
 
 function updateSpeed() {
-    let speed = document.getElementsByName('tspeed')[0].value;
+    let speed = parseFloat(document.getElementsByName('tspeed')[0].value);
     if (!speed || !(speed >= 0)) {
         document.getElementsByName('tspeed')[0].value = Math.round(3600 / speedFluss_s100m) / 10;
     } else {
@@ -37,13 +37,13 @@ function updateSpeed() {
 }
 
 function updateAthlet() {
-    let speed = document.getElementsByName('ts1')[0].value;
+    let speed = parseInt(document.getElementsByName('ts1')[0].value);
     if (!speed || !(speed > 0)) {
         document.getElementsByName('ts1')[0].value = athlet_s1;
     } else {
         athlet_s1 = speed;
     }
-    speed = document.getElementsByName('ts2')[0].value;
+    speed = parseInt(document.getElementsByName('ts2')[0].value);
     if (!speed || !(speed > 0)) {
         document.getElementsByName('ts2')[0].value = athlet_s2;
     } else {
