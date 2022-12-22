@@ -2,20 +2,17 @@
    MIT licence
  */
    
-let distanceSee_m = 400;
+let distanceFluss_m = 1700;
 let speedFluss_s100m = 65;
 let speedFluss_m_s = 1.5;
 let athlet_s1 = 67;
 let athlet_s2 = 95;
-let distanceFluss_m = 1700;
-let modeFluss = false;
 
 
 function init() {
     let distance = getURLParameter("distance");
     if (distance) {
         distanceFluss_m = distance;
-        modeFluss = true;
     }
     update();
 }
@@ -71,20 +68,20 @@ function update() {
 function calculate() {
     let time1 = document.getElementsByName('ts1')[0].value;
     let time2 = document.getElementsByName('ts2')[0].value;
-    let stime1 = distanceSee_m * time1 / 100;
-    let stime2 = distanceSee_m * time2 / 100;
 
     let vTime1 = 100 / time1;
     let vTime2 = 100 / time2;
     let vFluss = 100 / speedFluss_s100m;
 
-    let distanceFluss = Math.round(distanceSee_m *
-        (1 / vTime2 - 1 / vTime1) / (1 / (vTime2 + vFluss) - 1 / (vTime1 + vFluss)));
+    let distanceSee = Math.round(distanceFluss_m *
+        (1 / (vTime2 + vFluss) - 1 / (vTime1 + vFluss)) / (1 / vTime2 - 1 / vTime1));
 
-    let distanceFlussT = Math.round(distanceSee_m * (vTime1 + vFluss) / vTime1);
+    let distanceSeeT = Math.round(distanceFluss_m * vTime1 / (vTime1 + vFluss));
 
-    let ftime1 = Math.round(distanceFluss / (vTime1 + vFluss));
-    let ftime2 = Math.round(distanceFluss / (vTime2 + vFluss));
+    let stime1 = distanceSee * time1 / 100;
+    let stime2 = distanceSee * time2 / 100;
+    let ftime1 = Math.round(distanceFluss_m / (vTime1 + vFluss));
+    let ftime2 = Math.round(distanceFluss_m / (vTime2 + vFluss));
     if (ftime2 > ftime1) {}
     let fdelta = ftime2 - ftime1;
     if (ftime1 > ftime2) {
@@ -95,8 +92,8 @@ function calculate() {
         sdelta = stime1 - stime2;
     }
 
-    let ftime1T = Math.round(distanceFlussT / (vTime1 + vFluss)); // == stime1
-    let ftime2T = Math.round(distanceFlussT / (vTime2 + vFluss));
+    let ftime1T = Math.round(distanceSeeT / (vTime1)); // == stime1
+    let ftime2T = Math.round(distanceSeeT / (vTime2));
     let fdeltaT = ftime2T - ftime1T;
     if (ftime1T > ftime2T) {
         fdeltaT = ftime1T - ftime2T;
