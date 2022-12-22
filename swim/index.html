@@ -12,7 +12,7 @@
 <table>
 <tr class="row-header">
     <td class="col-1" colspan="3">
-        Correlate distance lake
+        Compare distance lake
     </td>
     <td class="col-3">
         <input type="number" name="tdistance" placeholder="m" onchange="update()" onclick="this.select();" />
@@ -49,10 +49,16 @@
 </tr>
 <tr class="row-time">
     <td class="col-1">
-        <div>Lake</div>
+        <div>&nbsp;</div>
         <div>Time athlete 1</div>
         <div>Time athlete 2</div>
         <div>Difference 1:2</div>
+    </td>
+    <td class="col-2" colspan="3">
+        <div class="suggest">Distance lake</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
     </td>
     <td class="col-2">
         <div id="_distanceSee" class="suggest">--</div>
@@ -60,7 +66,15 @@
         <div id="_stime_s2" class="suggest">--</div>
         <div id="_sdelta_s" class="suggest">--</div>
     </td>
-    <td class="col-3" colspan="2">
+</tr>
+<tr class="row-time">
+    <td class="col-1">
+        <div>&nbsp;</div>
+        <div>Time athlete 1</div>
+        <div>Time athlete 2</div>
+        <div>Difference 1:2</div>
+    </td>
+    <td class="col-3" colspan="3">
         <div class="suggest">Distance river</div>
         <div>equal time</div>
         <div>&nbsp;</div>
