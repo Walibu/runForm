@@ -58,6 +58,10 @@ input::-moz-placeholder {
 .row-time input {
     width: 1.6em;
 }
+.row-space td {
+    padding: 1px;
+    background-color: grey;
+}
 .row-header, .row-time {
     padding: 1em;
 }
