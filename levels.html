@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script type="text/javascript" src="code.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body onload="init()">
+
+<table>
+<tr class="row-header">
+    <td class="col-1">
+        Schwelle (min / km)
+    </td>
+    <td class="col-2" colspan="2">
+        <input type="number" name="ts-min" placeholder="min" onchange="calculate()" onclick="this.select();" /> :
+        <input type="number" name="ts-sec" placeholder="sec" onchange="calculate()" onclick="this.select();" />
+    </td>
+    <td class="col-4">
+        <button id="update-button" onclick="calculate()">update</button>
+    </td>
+</tr>
+<tr class="row-time">
+    <td class="col-1">Intervall 4-12x:
+        <div>(Pause kurz, 1-2')</div>
+    </td>
+    <td class="col-2">
+        <div>1000m</div>
+        <div> 400m</div>
+        <div> 200m</div>
+    </td>
+    <td class="col-3">
+    </td>
+    <td class="col-4">
+        <div id="_1000int" class="suggest">--</div>
+        <div id="_400int" class="suggest">--</div>
+        <div id="_200int" class="suggest">--</div>
+    </td>
+</tr>
+<tr class="row-time">
+    <td class="col-1">Wiederholung 2-10x:
+        <div>(Pause lang, 2-4')</div>
+    </td>
+    <td class="col-2">
+        <div>1000m</div>
+        <div> 400m</div>
+        <div> 200m</div>
+    </td>
+    <td class="col-3">
+    </td>
+    <td class="col-4">
+        <div id="_1000rep" class="suggest">--</div>
+        <div id="_400rep" class="suggest">--</div>
+        <div id="_200rep" class="suggest">--</div>
+    </td>
+</tr>
+<tr class="row-time">
+    <td class="col-1">Wettkampfzeit:</td>
+    <td class="col-2">
+        <div>3k</div>
+        <div>5k</div>
+        <div>10k</div>
+    </td>
+    <td class="col-3">
+    </td>
+    <td class="col-4">
+        <div id="_3kPB" class="suggest">--</div>
+        <div id="_5kPB" class="suggest">--</div>
+        <div id="_10kPB" class="suggest">--</div>
+    </td>
+</tr>
+<tr class="row-result">
+    <td colspan="4">
+    Alle Angaben ohne Gewähr ;)
+    </td>
+</tr>
+<tr><td></td></tr>
+<tr>
+    <td colspan="4">
+        <div class="back-forward-link">
+            <a id="linkback" href="./index.html"> &#10145; Test run 1k</a>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td colspan="4">
+        <div class="back-forward-link">
+            <a id="linkback" href="./swim/index.html"> &#10145; Test swim</a>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td colspan="4">
+        <div class="back-forward-link">
+            <a id="linkback" href="https://fambu.ch"> &#8962; Home</a>
+        </div>
+    </td>
+</tr>
+</table>
+</body>
+</html>

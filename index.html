@@ -3,94 +3,93 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" type="image/png" href="favicon-96x96.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon-76x76.png" />
 <script type="text/javascript" src="code.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
-<body onload="init()">
-
+<body onload="initValues()">
 <table>
 <tr class="row-header">
-    <td class="col-1">
-        Schwelle (min / km)
+    <td class="col-1">Distanz<br />
+        <input type="number" name="distance" min="500" max="2000" onchange="calc()" /> m
     </td>
-    <td class="col-2" colspan="2">
-        <input type="number" name="ts-min" placeholder="min" onchange="calculate()" /> :
-        <input type="number" name="ts-sec" placeholder="sec" onchange="calculate()" />
+    <td class="col-3" colspan="3">
+        <div class="name-input">
+            Läufer<br />
+            <input type="text" name="identity" placeholder="Name" />
+        </div>
     </td>
     <td class="col-4">
-        <button id="update-button" onclick="calculate()">update</button>
+        <span id="userList">
+            Gespeicherte Daten<br />
+            <select id="userchoice" name="identityList" onchange="changeName()" onclick="changeName()">
+            </select>
+        </span>
     </td>
 </tr>
 <tr class="row-time">
-    <td class="col-1">Intervall 4-12x:
-        <div>(Pause kurz, 1-2')</div>
-    </td>
+    <td class="col-1">sehr locker</td>
     <td class="col-2">
-        <div>1000m</div>
-        <div> 400m</div>
-        <div> 200m</div>
+        <input type="number" name="veryeasy-min" min="2" max="10" placeholder="min" onchange="calc()" onclick="this.select();" /> :
+        <input type="number" name="veryeasy-sec" min="0" max="60" placeholder="sec" onchange="calc()" onclick="this.select();" />
     </td>
-    <td class="col-3">
-    </td>
-    <td class="col-4">
-        <div id="_1000int" class="suggest">--</div>
-        <div id="_400int" class="suggest">--</div>
-        <div id="_200int" class="suggest">--</div>
-    </td>
-</tr>
-<tr class="row-time">
-    <td class="col-1">Wiederholung 2-10x:
-        <div>(Pause lang, 2-4')</div>
-    </td>
+    <td class="col-5"><div id="veryeasy-pace">-</div></td>
+    <td class="col-3"><div class="part-result" id="veryeasy-per">-</div></td>
+    <td class="col-4"> (65% - 73%)</td>
+</tr><tr class="row-time">
+    <td class="col-1">locker</td>
     <td class="col-2">
-        <div>1000m</div>
-        <div> 400m</div>
-        <div> 200m</div>
+        <input type="number" name="easy-min" min="2" max="10" placeholder="min" onchange="calc()" onclick="this.select();" /> :
+        <input type="number" name="easy-sec" min="0" max="60" placeholder="sec" onchange="calc()" onclick="this.select();" />
     </td>
-    <td class="col-3">
-    </td>
-    <td class="col-4">
-        <div id="_1000rep" class="suggest">--</div>
-        <div id="_400rep" class="suggest">--</div>
-        <div id="_200rep" class="suggest">--</div>
-    </td>
-</tr>
-<tr class="row-time">
-    <td class="col-1">Wettkampfzeit:</td>
+    <td class="col-5"><div id="easy-pace">-</div></td>
+    <td class="col-3"><div class="part-result" id="easy-per">-</div></td>
+    <td class="col-4"> (73% - 83%)</td>
+</tr><tr class="row-time">
+    <td class="col-1">zügig</td>
     <td class="col-2">
-        <div>3k</div>
-        <div>5k</div>
-        <div>10k</div>
+        <input type="number" name="moderate-min" min="2" max="10" placeholder="min" onchange="calc()" onclick="this.select();" /> :
+        <input type="number" name="moderate-sec" min="0" max="60" placeholder="sec" onchange="calc()" onclick="this.select();" />
     </td>
-    <td class="col-3">
+    <td class="col-5"><div id="moderate-pace">-</div></td>
+    <td class="col-3"><div class="part-result" id="moderate-per">-</div></td>
+    <td class="col-4"> (83% - 93%)</td>
+</tr><tr class="row-time">
+    <td class="col-1">schnell</td>
+    <td class="col-2">
+        <input type="number" name="fast-min" min="2" max="10" placeholder="min" onchange="calc()" onclick="this.select();" /> :
+        <input type="number" name="fast-sec" min="0" max="60" placeholder="sec" onchange="calc()" onclick="this.select();" />
     </td>
-    <td class="col-4">
-        <div id="_3kPB" class="suggest">--</div>
-        <div id="_5kPB" class="suggest">--</div>
-        <div id="_10kPB" class="suggest">--</div>
+    <td class="col-5"><div id="fast-pace">-</div></td>
+    <td class="col-3"><div class="part-result" id="fast-per">-</div></td>
+    <td class="col-4"> (93% - 103%)</td>
+</tr><tr class="row-time">
+    <td class="col-1">maximal</td>
+    <td class="col-2">
+        <input type="number" name="maxspeed-min" min="2" max="10" placeholder="min" onchange="calc()" onclick="this.select();" /> :
+        <input type="number" name="maxspeed-sec" min="0" max="60" placeholder="sec" onchange="calc()" onclick="this.select();" />
     </td>
+    <td class="col-5"><div id="maxspeed-pace">-</div></td>
+    <td class="col-3"><div class="part-result" id="maxspeed-per">-</div></td>
+    <td class="col-4"> (103% - 110%)</td>
 </tr>
 <tr class="row-result">
-    <td colspan="4">
-    Alle Angaben ohne Gewähr ;)
-    </td>
+    <td class="col-1">Schwelle (min/km)</td>
+    <td class="col-2"><div id="threshold">--</div></td>
+    <td class="col-3" colspan="2"><button id="savebutton" onclick="saveUserData()">Daten speichern</button></td>
+    <td class="col-4"><button id="deletebutton" onclick="deleteUserData()">löschen</button></td>
 </tr>
 <tr><td></td></tr>
 <tr>
-    <td colspan="4">
-        <div class="back-forward-link">
-            <a id="linkback" href="./test1k.html"> &#10145; Test run 1k</a>
-        </div>
-    </td>
-</tr>
-<tr>
-    <td colspan="4">
-        <div class="back-forward-link">
-            <a id="linkback" href="./swim/index.html"> &#10145; Test swim</a>
+    <td colspan="5">
+        <!--<a href="./index.html" download="lauftest.html">Download</a><br />-->
+        <div id="navigation_1" class="back-forward-link">
+            <a id="linktrainpace" href="./levels.html"> &#11013; Zurück</a>
         </div>
     </td>
 </tr>
 </table>
 </body>
-</html>
+</html>                                                     

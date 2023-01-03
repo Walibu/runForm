@@ -14,7 +14,7 @@ td {
     padding: 5px;
 }
 input {
-    border-radius: 0;
+    border-radius: 5px;
     padding: 5px;
     border: 1px solid grey
 }
@@ -79,12 +79,21 @@ input::-moz-placeholder {
     text-align: center;
     padding: 0.3em 0.5em;
 }
-#linktrainpace, #linkback {
+
+button,
+#linktrainpace,
+#linkback {
     background-color: #7ba1c2;
     text-decoration: none;
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.5);
     padding: 5px;
-    margin: 25px -5px 0 0;
     color: white;
+}
+#linktrainpace,
+#linkback {
+    margin: 25px -5px 0 0;
 }
 #linktrainpace:hover, #linkback:hover {
     background-color: #2d5b85;

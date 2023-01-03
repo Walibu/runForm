@@ -205,6 +205,7 @@ function setName(nameStr) {
 function changeName() {
     let name = document.getElementsByName("identityList")[0].value;
     document.getElementsByName("identity")[0].value = name;
+    this.select();
     initUserData();
     setDeleteButtonName(name);
 }
